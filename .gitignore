@@ -5,6 +5,9 @@
 # Files for the ART/Dalvik VM
 *.dex
 
+subscribe.png
+subscribe.psd
+
 # Java class files
 *.class
 
