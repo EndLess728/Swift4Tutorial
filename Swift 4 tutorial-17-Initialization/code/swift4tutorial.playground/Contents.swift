@@ -3,55 +3,50 @@
 //https://www.youtube.com/c/NguyenDucHoang
 
 import UIKit
-//Init with no parameters
+//Init with no parameters.Example:
 /*
 struct Point {
     var x, y: Double
     init() {
-        x = 10
-        y = 20
+        x = 20
+        y = 30
     }
 }
 var p = Point()
-print("Point detail x = \(p.x), y = \(p.y)")
- */
-
+print("Point detail: x = \(p.x), y = \(p.y)")
+*/
 struct Point {
-    var x = 10.0
-    var y = 20.0
+    var x = 20.0
+    var y = 30.0
 }
 var p = Point()
-print("Point detail x = \(p.x), y = \(p.y)")
+print("Point detail: x = \(p.x), y = \(p.y)")
+/*
 struct Energy {
     var calories: Float
-    //fromCalories  = "argument labels"
     init(fromCalories calories: Float) {
         self.calories = calories
     }
-    //1 joule = calorie
     init(fromJoules joules: Float) {
-        self.calories = joules * 0.000239006
+        self.calories = 0.000239006 * joules
     }
-//    Initializer Parameters Without Argument Labels
+    //    Initializer Parameters Without Argument Labels
     init(_ joules: Float) {
-        self.calories = joules * 0.000239006
+        self.calories = 0.000239006 * joules
     }
-    
 }
 let energy1 = Energy(fromCalories: 110.0)
-let energy2 = Energy(fromJoules:200)
-let energy3 = Energy(300)
 print("energy1.calories = \(energy1.calories)")
+let energy2 = Energy(fromJoules: 200.0)
 print("energy2.calories = \(energy2.calories)")
-print("energy3.calories = \(energy3.calories)")
-
+*/
 class Customer {
     var fullName: String
     var age: Int? //Optional Property Types
     init(fullName: String) {
         self.fullName = fullName
     }
-    func description() {
+    func description(){
         print(self.fullName)
     }
 }
@@ -63,6 +58,7 @@ class Person {
     init(name: String) {
         self.name = name
     }
+    
     convenience init() {
         self.init(name: "no name")
     }
@@ -73,6 +69,7 @@ class Employee: Person {
         self.staffNumber = staffNumber //call this line first
         super.init(name: name)
     }
+    
     convenience override init(name: String) {
         self.init(name: name, staffNumber: "0000")
     }
@@ -100,11 +97,10 @@ enum Rank: String {
     case bad = "bad", medium = "medium", good = "good", excellent = "excellent"
 }
 let rank1 = Rank(rawValue: "excellent")
-let rank2 = Rank(rawValue: "very good") //not necessary init?
+let rank2 = Rank(rawValue: "any rank...")
 //Setting a Default Property Value with a Closure or Function
-
-class MainView:UIView {
-    var leftLabel:UILabel = {
+class MainView: UIView {
+    var leftLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.green
         label.text = "This is an example text"
@@ -112,9 +108,7 @@ class MainView:UIView {
     }()
 }
 let mainView = MainView()
-mainView.leftLabel.text
-
-
+print(mainView.leftLabel.text)
 
 
 
